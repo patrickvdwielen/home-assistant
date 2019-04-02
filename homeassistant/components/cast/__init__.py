@@ -2,7 +2,7 @@
 from homeassistant import config_entries
 from homeassistant.helpers import config_entry_flow
 
-REQUIREMENTS = ['pychromecast==2.5.1']
+REQUIREMENTS = ['pychromecast==3.1.0']
 
 DOMAIN = 'cast'
 

@@ -6,8 +6,9 @@ https://home-assistant.io/components/sensor.qwikswitch/
 """
 import logging
 
-from homeassistant.components.qwikswitch import DOMAIN as QWIKSWITCH, QSEntity
 from homeassistant.core import callback
+
+from . import DOMAIN as QWIKSWITCH, QSEntity
 
 DEPENDENCIES = [QWIKSWITCH]
 
@@ -32,7 +33,7 @@ class QSSensor(QSEntity):
 
     def __init__(self, sensor):
         """Initialize the sensor."""
-        from pyqwikswitch import SENSORS
+        from pyqwikswitch.qwikswitch import SENSORS
 
         super().__init__(sensor['id'], sensor['name'])
         self.channel = sensor['channel']

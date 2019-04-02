@@ -7,8 +7,9 @@ https://home-assistant.io/components/binary_sensor.qwikswitch/
 import logging
 
 from homeassistant.components.binary_sensor import BinarySensorDevice
-from homeassistant.components.qwikswitch import QSEntity, DOMAIN as QWIKSWITCH
 from homeassistant.core import callback
+
+from . import DOMAIN as QWIKSWITCH, QSEntity
 
 DEPENDENCIES = [QWIKSWITCH]
 
@@ -34,7 +35,7 @@ class QSBinarySensor(QSEntity, BinarySensorDevice):
 
     def __init__(self, sensor):
         """Initialize the sensor."""
-        from pyqwikswitch import SENSORS
+        from pyqwikswitch.qwikswitch import SENSORS
 
         super().__init__(sensor['id'], sensor['name'])
         self.channel = sensor['channel']
